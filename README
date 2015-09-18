@@ -30,3 +30,6 @@ Results can be somewhat filtered automatically by running
 
 Typical use will require booting the repo if it has not already been booted,
 building and then running a scan.
+
+Parameters dictating runtime behavior are defined in main.sh and may be
+altered based on needs.

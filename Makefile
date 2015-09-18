@@ -43,7 +43,6 @@ $(JQ_DIR)/Makefile: $(JQ_DIR)/configure
 	# disable-maintainer-mode to build without bison & flex
 	cd $(JQ_DIR); ./configure --disable-maintainer-mode --prefix='$(abspath $(PREFIX))'
 
-
 $(BINDIR)/jq: $(BINDIR) $(JQ_DIR)/Makefile
 	$(MAKE) -C $(JQ_DIR)
 	$(MAKE) -C $(JQ_DIR) install
