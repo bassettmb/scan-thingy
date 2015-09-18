@@ -8,11 +8,16 @@ MASSCAN_DIR := masscan
 DEPS := $(BINDIR)/jq $(BINDIR)/masscan
 SRC := main.sh scan.sh probe.sh filter.pl
 
-.PHONY: all boot clean distclean scan
+.PHONY: all boot update clean distclean scan
 
 all: $(DEPS) $(addprefix $(BINDIR)/, $(SRC))
 
 boot:
+	git submodule update --init $(JQ_DIR)
+	git submodule update --init $(MASSCAN_DIR)
+
+update:
+	git pull origin HEAD
 	git submodule update --checkout $(JQ_DIR)
 	git submodule update --checkout $(MASSCAN_DIR)
 
