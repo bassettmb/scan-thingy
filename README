@@ -1,0 +1,32 @@
+Dependencies:
+  scripts:
+    bash
+    curl
+    grep
+    sed
+    sudo
+    optionally perl
+  masscan: 
+    libpcap
+  jq:
+    autoconf
+    bison
+    flex
+    libtool
+
+Booting:
+  make boot
+
+Building:
+  make
+
+Scanning:
+  make scan
+ 
+main.sh may be invoked directly if ./local/bin is in the current path.
+
+Results can be somewhat filtered automatically by running
+./local/bin/filter.pl on the output directory.
+
+Typical use will require booting the repo if it has not already been booted,
+building and then running a scan.
